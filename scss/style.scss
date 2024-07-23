@@ -1,0 +1,89 @@
+@import 'layout';
+@import 'variables';
+
+* {
+    font-family: Karla, Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    color: hsl(0, 100%, 100%);
+    background-color: hsla(0, 0%, 0%, 0.565);
+    box-sizing: border-box;
+}
+
+:not(h1, h2) {
+    font-size: $normal-text;
+}
+section {
+    font-weight: $light;
+
+    // Utils
+    .cyan {
+        color: $primary-cyan;
+    }
+
+    .yellow {
+        color: $primary-yellow;
+    }
+    
+    .bg-yellow {
+        background-color: $primary-yellow;
+    }
+
+    .big-text {
+        font-weight: $bold;
+        font-size: $big-text;
+    }
+    
+    .muted {
+        color: $color-muted;
+    }
+    
+    :where(h1, h2, button) {
+        font-weight: $bold;
+    }
+    
+    p {
+        color: $color-primary;
+    }
+    
+    button {
+        @include btn;
+        box-shadow: 0 0.125rem 0.625rem 0.125rem $shadow;
+        cursor: pointer;
+        transition: all .2s;
+        
+        &:hover {
+            background-color: hsl(0, 100%, 100%);
+            color: $primary-yellow;
+            transition: all .4s;
+        }
+
+        &:active {
+            background-color: $color-muted;
+        }
+    }
+
+    &:nth-child(1) {
+        background-color: hsl(0, 0%, 100%);
+
+        p {
+            color: $color-secondary;
+        }
+    }
+
+    &:nth-child(2) {
+        background-color: $primary-cyan;
+    }
+
+    &:nth-child(3) {
+        background-color: $primary-cyan-2;
+    }
+}
+footer {
+    a:link, a:visited {
+        color: $primary-yellow;
+        text-decoration: none;
+    }
+}
